@@ -3,8 +3,12 @@ An app that allows login through url and first checks for website maintenance st
 
 To install app using docker:
 Docker commands: 
--- git clone 
--- docker-compose build #docker should be installed in oyur host system.
+-- git clone
+create the mysql docker image which is already updated with database; check the mysql-docker folder to create that image.
+-- docker build -t mysql:v4 .
+you can use any tag name of your mysql image, remember to change that name in docker-compose.yml file also.
+check whether the docker image is created -- docker images;
+-- docker-compose build #docker should be installed in your host system.
 -- docker-compose up
 check whether the docker image is created -- docker images; and container is running --docker ps
 
