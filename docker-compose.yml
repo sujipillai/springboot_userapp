@@ -3,7 +3,7 @@
 version: '3'
 services:
   mysql-db:
-    image: mysql:v4 # custom mysql image with initialized database and tables
+    image: sujipillai/mysql #custom mysql image with initialized database and tables
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=userapp
@@ -12,6 +12,7 @@ services:
       - mysql-data:/var/lib/mysql
   main-app:
     build: .
+    image: sujipillai/spring-boot-userapp
     depends_on:
       - mysql-db
     ports:
